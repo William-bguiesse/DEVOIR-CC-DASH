@@ -59,3 +59,5 @@ layout = dbc.Container([
         ], width=9)
     ])
 ], fluid=True)
+
+import pages.page2_cb

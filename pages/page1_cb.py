@@ -14,6 +14,6 @@ def update_graph(selected_region):
         x='Date', 
         y='Total Volume', 
         title=f"Détail des ventes : {selected_region}",
-        markers=True 
+        markers=True # Optionnel : pour mieux voir les points de données
     )
     return fig
