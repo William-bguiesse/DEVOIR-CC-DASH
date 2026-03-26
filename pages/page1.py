@@ -44,3 +44,5 @@ layout = dbc.Container([
         ])
     ], className="mt-4")
 ], fluid=True)
+
+import pages.page1_cb
