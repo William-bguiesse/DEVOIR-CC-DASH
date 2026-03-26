@@ -14,7 +14,21 @@ app = dash.Dash(
 )
 
 app.layout = dbc.Container([
-    dash.page_container
+    # Barre de navigation fixe en haut
+    dbc.NavbarSimple(
+        children=[
+            dbc.NavItem(dbc.NavLink("Volume des Ventes (P1)", href="/", active="exact")),
+            dbc.NavItem(dbc.NavLink("Détails & Tableau (P2)", href="/page2", active="exact")),
+        ],
+        brand="Avocado Analytics Dashboard",
+        brand_href="/",
+        color="dark",
+        dark=True,
+        className="mb-4",
+    ),
+    
+    # Conteneur où les pages (page1.py / page2.py) vont s'afficher
+    dash.page_container 
 ], fluid=True)
 
 if __name__ == '__main__':
