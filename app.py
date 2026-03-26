@@ -1,5 +1,21 @@
-from dash import Dash, dcc, html, Input, Output
-import dash_bootstrap_components as dbc
 import pandas as pd
-import plotly.express as px
+import dash
+import dash_bootstrap_components as dbc
 
+# partie chargement des données
+df = pd.read_csv('data/avocado.csv')
+df['Date'] = pd.to_datetime(df['Date'])
+
+# partie initialisation de l'application Dash
+app = dash.Dash(
+    __name__, 
+    use_pages=True,
+    external_stylesheets=[dbc.themes.BOOTSTRAP]
+)
+
+app.layout = dbc.Container([
+    dash.page_container
+], fluid=True)
+
+if __name__ == '__main__':
+    app.run(debug=True)
